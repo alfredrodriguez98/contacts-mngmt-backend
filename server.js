@@ -12,7 +12,8 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 app.get("/api/contacts", (req, res) => {
-  res.send("Get all contacts");
+  // res.send("Get all your contacts");
+  res.json({ message: "This is the response in JSON format" });
 });
 
 //Listen to server
