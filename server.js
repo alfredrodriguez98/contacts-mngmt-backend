@@ -11,10 +11,13 @@ const app = express();
 // dynamically as shown below
 const port = process.env.PORT || 5000;
 
-app.get("/api/contacts", (req, res) => {
-  // res.send("Get all your contacts");
-  res.json({ message: "This is the response in JSON format" });
-});
+// app.get("/api/contacts", (req, res) => {
+//   // res.send("Get all your contacts");
+//   res.json({ message: "This is the response in JSON format" });
+// });
+
+//Using middleware approach
+app.use("/api/contacts", require("./routes/contactRoutes"));
 
 //Listen to server
 app.listen(port, () => {
